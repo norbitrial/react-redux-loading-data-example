@@ -26,7 +26,7 @@ export default function reducer(state=initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                errorMessage: action.data
+                errorMessage: action.error
             };
         default:
             return state;
