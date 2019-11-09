@@ -25,6 +25,29 @@ function App() {
     service.getFakeData().then(success).catch(error);
   };
 
+  const renderTableBodyContent = () => {
+    if (fakeDataReducer.isLoading) {
+      return <tr><td colSpan={4}><Loader /></td></tr>
+    }
+    
+    if (fakeDataReducer.items.length === 0) {
+      const message = fakeDataReducer.errorMessage === null ? 'No results found' : fakeDataReducer.errorMessage;
+
+      return <tr><td colSpan={4}>{message}</td></tr>
+    }
+            
+    return fakeDataReducer.items.map((e) => {
+      return (
+        <tr key={e.id}>
+          <td>{e.id}</td>
+          <td>{e.title}</td>
+          <td>{e.count}</td>
+          <td>{e.description}</td>
+        </tr>
+      )
+    });
+  };
+
   return (
     <>
       <h1>Fake Data Store example</h1>
@@ -42,22 +65,9 @@ function App() {
           </tr>
         </thead>
         <tbody>
-        {
-          fakeDataReducer.isLoading ?
-            <tr><td colSpan={4}><Loader /></td></tr> :
-            fakeDataReducer.items.length === 0 ?
-            <tr><td colSpan={4}>{fakeDataReducer.errorMessage === null ? 'No results found' : fakeDataReducer.errorMessage}</td></tr> :
-            fakeDataReducer.items.map((e) => {
-              return (
-                <tr key={e.id}>
-                  <td>{e.id}</td>
-                  <td>{e.title}</td>
-                  <td>{e.count}</td>
-                  <td>{e.description}</td>
-                </tr>
-              )
-            })
-        }
+          {
+            renderTableBodyContent() 
+          }
         </tbody>
       </table>
     </>
