@@ -1,3 +1,7 @@
+## Fake Data Store example
+
+The reason why this project has been created is to represent React hooks with `useSelector` and `useDispatch` usage in a simple Redux store. The app simulates a fake API call which on purpose returns sometimes with success or failed response.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
