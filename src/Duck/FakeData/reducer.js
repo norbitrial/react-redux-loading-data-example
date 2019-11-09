@@ -19,14 +19,14 @@ export default function reducer(state=initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                items: [1,2,3,4,5,6],
+                items: action.data,
             };
 
         case types.DATA_FETCH_FAILED:
             return {
                 ...state,
                 isLoading: false,
-                errorMessage: 'Something went wrong'
+                errorMessage: action.data
             };
         default:
             return state;

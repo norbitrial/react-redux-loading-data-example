@@ -1,12 +1,21 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
+.app-button {
+  margin-bottom: 2vh;
 }
 
-.item {
-  width: 100%;
+.dataTable {
+  width: 70%;
+  border: 1px solid black;
+  margin: 0 auto;
 }
 
-.container>div {
-  flex: 0 50%;
+.dataTable>tbody {
+  text-align: center;
+}
+
+.dataTable>thead>tr>th {
+  border: 1px solid black;
+}
+
+.dataTable>tbody>tr>td {
+  border: 1px solid black;
 }
