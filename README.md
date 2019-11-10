@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 ## Fake Data Store example
 
 The reason why this project has been created is to represent React hooks with `useSelector` and `useDispatch` usage in a simple Redux store. The app simulates a fake API call which on purpose returns sometimes with success or failed response.
