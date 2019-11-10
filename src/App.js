@@ -14,15 +14,15 @@ function App() {
 
     const success = (data) => {
       dispatch({type: types.DATA_FETCH_SUCCESS, data});
-      dispatch({type: types.DATA_FETCH_FINISHED});
     };
 
     const error = (error) => {
       dispatch({type: types.DATA_FETCH_FAILED, error});
-      dispatch({type: types.DATA_FETCH_FINISHED});
     };
     
-    service.getFakeData().then(success).catch(error);
+    service.getFakeData()
+           .then(success)
+           .catch(error);
   };
 
   const renderTableBodyContent = () => {
