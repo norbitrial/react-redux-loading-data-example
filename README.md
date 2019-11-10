@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/norbitrial/react-redux-loading-data-example.svg)](https://david-dm.org/norbitrial/react-redux-loading-data-example)
 
 ## Fake Data Store example
 
