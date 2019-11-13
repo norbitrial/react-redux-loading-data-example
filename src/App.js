@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Loader from './Components/Loader';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import types from './Duck/FakeData/types';
@@ -9,7 +9,7 @@ function App() {
   const fakeDataReducer = useSelector(state => state.fakeDataReducer);
   const dispatch = useDispatch();
 
-  const onClick = () => {
+  const onClick = useCallback(() => {
     dispatch({type: types.DATA_FETCH_STARTED});
 
     const success = (data) => {
@@ -23,7 +23,7 @@ function App() {
     service.getFakeData()
            .then(success)
            .catch(error);
-  };
+  }, [dispatch]);
 
   const renderTableBodyContent = () => {
     if (fakeDataReducer.isLoading) {
