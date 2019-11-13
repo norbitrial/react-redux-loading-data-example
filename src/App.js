@@ -8,7 +8,6 @@ import './App.css';
 function App() {
   const fakeDataReducer = useSelector(state => state.fakeDataReducer);
   const dispatch = useDispatch();
-
   const onClick = useCallback(() => {
     dispatch({type: types.DATA_FETCH_STARTED});
 
@@ -24,7 +23,7 @@ function App() {
            .then(success)
            .catch(error);
   }, [dispatch]);
-
+  
   const renderTableBodyContent = () => {
     if (fakeDataReducer.isLoading) {
       return <tr><td colSpan={4}><Loader /></td></tr>
